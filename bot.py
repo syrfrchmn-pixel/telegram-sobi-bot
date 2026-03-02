@@ -47,8 +47,14 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 
+import os
+
+SERVICE_ACCOUNT_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "service_account.json")
+if os.path.exists("/etc/secrets/service_account.json"):
+    SERVICE_ACCOUNT_FILE = "/etc/secrets/service_account.json"
+
 creds = Credentials.from_service_account_file(
-    "service_account.json",
+    SERVICE_ACCOUNT_FILE,
     scopes=scope,
 )
 
