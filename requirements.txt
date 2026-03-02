@@ -1,0 +1,8 @@
+python-telegram-bot==21.6
+gspread
+google-auth
+google-auth-oauthlib
+pandas
+matplotlib
+apscheduler
+requests
